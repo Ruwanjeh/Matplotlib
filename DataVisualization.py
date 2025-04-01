@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Line chart (example: trends over time if there's a time column, here we'll assume 'year' and 'sales' columns)
+# plt.figure(figsize=(10,6))
+# plt.plot(df['year'], df['sales'])
+# plt.title('Sales Over Time')
+# plt.xlabel('Year')
+# plt.ylabel('Sales')
+# plt.grid(True)
+# plt.show()
+
+# Bar chart (average petal length per species)
+plt.figure(figsize=(8,5))
+sns.barplot(x='species', y='petal_length', data=df)
+plt.title('Average Petal Length per Species')
+plt.xlabel('Species')
+plt.ylabel('Average Petal Length')
+plt.show()
+
+# Histogram (distribution of petal lengths)
+plt.figure(figsize=(8,5))
+sns.histplot(df['petal_length'], bins=20, kde=True)
+plt.title('Distribution of Petal Length')
+plt.xlabel('Petal Length')
+plt.ylabel('Frequency')
+plt.show()
+
+# Scatter plot (relationship between sepal length and petal length)
+plt.figure(figsize=(8,5))
+sns.scatterplot(x='sepal_length', y='petal_length', data=df)
+plt.title('Sepal Length vs Petal Length')
+plt.xlabel('Sepal Length')
+plt.ylabel('Petal Length')
+plt.show()
